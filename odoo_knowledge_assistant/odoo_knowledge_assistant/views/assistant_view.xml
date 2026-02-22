@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ==== FORM VIEW ==== -->
+    <record id="view_odoo_knowledge_assistant_form" model="ir.ui.view">
+        <field name="name">odoo.knowledge.assistant.form</field>
+        <field name="model">odoo.knowledge.assistant</field>
+        <field name="arch" type="xml">
+            <form string="Odoo Bilgi Asistanı">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+
+                    <group>
+                        <field name="question" placeholder="Sorunuzu buraya yazın..."/>
+                    </group>
+
+                    <group>
+                        <button
+                            name="action_ask"
+                            type="object"
+                            string="Sor"
+                            class="oe_highlight"/>
+                    </group>
+
+                    <group>
+                        <field name="answer" readonly="1"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- ==== LIST VIEW ==== -->
+    <record id="view_odoo_knowledge_assistant_list" model="ir.ui.view">
+        <field name="name">odoo.knowledge.assistant.list</field>
+        <field name="model">odoo.knowledge.assistant</field>
+        <field name="arch" type="xml">
+            <list string="Odoo Bilgi Asistanı Kayıtları">
+                <field name="name"/>
+                <field name="question"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- ==== ACTION ==== -->
+    <record id="action_odoo_knowledge_assistant" model="ir.actions.act_window">
+        <field name="name">Odoo Bilgi Asistanı</field>
+        <field name="res_model">odoo.knowledge.assistant</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- ==== MENU ==== -->
+    <menuitem id="menu_odoo_knowledge_assistant_root"
+              name="Odoo Bilgi Asistanı"
+              sequence="10"/>
+
+    <menuitem id="menu_odoo_knowledge_assistant"
+              name="Asistan"
+              parent="menu_odoo_knowledge_assistant_root"
+              action="action_odoo_knowledge_assistant"
+              sequence="10"/>
+
+</odoo>

@@ -1,0 +1,293 @@
+### Odoo Nedir?
+Odoo, CRM'den muhasebeye, stoktan İK'ya kadar pek çok kurumsal süreci tek platformda birleştiren, modüler yapıda, açık kaynak kodlu bir kurumsal kaynak planlama (ERP) sistemidir. Community (açık kaynak) ve Enterprise (lisanslı) olmak üzere iki ana sürümü vardır.
+
+### Odoo Community ve Enterprise Arasındaki Fark Nedir?
+Community sürüm ücretsiz ve açık kaynaklıdır; temel modülleri içerir. Enterprise sürüm ise lisanslıdır ve ek özellikler, ekstra modüller, bulut barındırma ve resmi destek gibi avantajlar sunar. Enterprise özellikleri, Community üzerine eklenen ilave modüller şeklinde çalışır.
+
+### Odoo Hangi İşletme Türleri İçin Uygundur?
+Odoo; KOBİ'lerden büyük ölçekli şirketlere, üretim, hizmet, perakende, e-ticaret ve lojistik gibi birçok sektöre uyarlanabilir. Modüler yapısı sayesinde sadece ihtiyaç duyulan modüller seçilerek küçük bir yapıdan başlayıp büyütülebilir.
+
+### Odoo’da Modül Nedir?
+Modül, belirli bir işlevi sağlayan uygulama paketidir. Satış, Stok, Muhasebe, CRM gibi her uygulama aslında bir Odoo modülüdür. Modüller bağımsız gibi görünse de aynı veritabanını kullanarak birbirleriyle entegre çalışır.
+
+### Odoo’da Uygulama (App) ve Modül İlişkisi Nedir?
+Apps ekranında gördüğümüz her “Uygulama” aslında bir modüldür. Bazı modüller son kullanıcıya ekran göstermez, sadece arka planda teknik fonksiyon ekler. Kullanıcı genelde Apps ekranında görünen modülleri uygulama olarak algılar.
+
+### Odoo’da Veriler Nasıl Organize Edilir?
+Odoo’da her uygulama kendi modelleri (tablo yapıları) ile çalışır. Müşteriler, ürünler, faturalar, çalışanlar, projeler gibi veriler bu modellerde saklanır. Modeller arası ilişkiler sayesinde, örneğin bir satış siparişi hem müşteriye hem ürüne hem de stok hareketine bağlanabilir.
+
+### Odoo’da Şirket (Company) Nedir?
+Company, aynı veritabanı içinde yönetilen farklı tüzel kişiliklerdir. Odoo tek veri tabanında birden fazla şirket destekler; kullanıcılar yetkilerine göre şirketler arasında geçiş yapabilir. Muhasebe ve stok gibi veriler şirket bazlı ayrılabilir.
+
+### Odoo’da Kullanıcı (User) ve Çalışan (Employee) Farkı Nedir?
+User, sisteme giriş yapabilen kişidir. Employee ise İK modülünde tutulan çalışan kaydıdır. Her user bir employee’e bağlı olabilir ama her employee’nin sisteme giriş yetkisi olmak zorunda değildir.
+
+### Odoo’da Geliştirici Modu (Developer Mode) Ne İşe Yarar?
+Geliştirici modu; teknik isimleri, view ID’lerini, model adlarını ve teknik ayarları görmeyi sağlar. Özel alan ekleme, kayıtların teknik detaylarını inceleme ve hata ayıklama için gereklidir. Genelde debug=1 parametresi ile aktif edilir.
+
+### Odoo’da Dil ve Yerelleştirme Nasıl Çalışır?
+Odoo çok dilli çalışır. Kullanıcı arayüzü dili ve rapor dili kullanıcı bazında ayarlanabilir. Ayrıca her ülke için muhasebe planları, vergi tanımları ve formatlar içeren “lokalizasyon” paketleri kullanılabilir.
+
+---
+
+### Odoo’da Uygulama Yükleme Mantığı Nedir?
+Apps ekranında istediğimiz uygulamayı seçip yüklediğimizde aslında ilgili modül veritabanına kurulur, gerekli tablolar oluşturulur ve menüler eklenir. Kaldırdığımızda ise bu modül devre dışı bırakılır; bazı veriler sistemde kalabilir.
+
+### Odoo’da Modül Güncelleme (Upgrade) Ne Zaman Gerekir?
+Geliştirme yapıp kodda değişiklik yaptıysan veya yeni bir sürüme geçtiysen, modülü upgrade etmen gerekir. Bu işlem, Python kodundaki değişikliklerin ve XML view güncellemelerinin veritabanına işlenmesini sağlar.
+
+### Odoo Apps Filtreleri Ne İşe Yarar?
+Apps ekranında varsayılan “Uygulamalar/Apps” filtresi sadece uygulama tipindeki modülleri listeler. “Extra” veya benzeri filtreler eklenerek teknik modüller de gösterilebilir. Böylece hem fonksiyonel hem teknik modüller yönetilebilir.
+
+### Odoo’da Modüller Arası Entegrasyon Nasıl Sağlanır?
+Modüller, ortak veri modellerini ve alanları paylaşarak entegre çalışır. Örneğin Satış modülünde oluşturulan siparişler, Faturalama ve Stok modüllerine otomatik kayıt oluşturur. Bu entegrasyon, modül bağımlılıkları ve model ilişkileri ile sağlanır.
+
+### Odoo’da Güvenlik Modeli Nasıl Çalışır?
+Odoo güvenliği üç katmanda ele alır: erişim kuralları (ir.model.access), kayıt kuralları (record rules) ve grup bazlı menü görünürlüğü. Bir kullanıcı belirli bir modele erişmek için hem doğru gruba sahip olmalı hem de ilgili erişim kurallarından izin almalıdır.
+
+---
+
+### Odoo’da Yeni Kullanıcı Nasıl Eklenir?
+Ayarlar → Kullanıcılar ekranında “Oluştur” diyerek yeni kullanıcı eklenir. Kullanıcının giriş e-postası, adı, dil tercihi ve hangi güvenlik gruplarına dahil olacağı burada belirlenir. Gruplar, kullanıcının hangi uygulamalara erişeceğini ve yetki seviyesini tanımlar.
+
+### Odoo’da Kullanıcı Grupları Ne İşe Yarar?
+Gruplar, kullanıcıların yetki paketlerini temsil eder. Örneğin “Satış: Kullanıcı”, “Muhasebe: Danışman” gibi. Bir kullanıcı birden fazla gruba ait olabilir; fiili izinler bu grupların birleşimiyle oluşur.
+
+### Odoo’da Çalışan Kartı Neler İçerir?
+Çalışan kaydında kişisel bilgiler, iletişim bilgileri, iş pozisyonu, departman, yöneticisi, sözleşme bilgileri, çalışma saatleri ve maaşla ilişkili alanlar bulunabilir. Bu kayıtlar İK, Bordro ve Çalışma Planı modülleriyle entegre çalışır.
+
+### Odoo’da Şirket Bilgileri Nereden Düzenlenir?
+Ayarlar → Şirketler ekranından şirket adı, adresi, vergi numarası, logo ve iletişim bilgileri düzenlenebilir. Bu bilgiler teklif, fatura ve raporlarda otomatik kullanılır.
+
+### Odoo’da Çok Şirketli Yapı (Multi-company) Nasıl Yönetilir?
+Kullanıcılar üst çubuktaki şirket seçicisinden aktif şirketi değiştirebilir. Her şirketin ayrı muhasebe, stok ve bazı ayarları olabilir. Kullanıcı, yetkisi varsa birden çok şirket verisine erişebilir.
+
+---
+
+### Satış Modülü Nedir?
+Satış modülü, teklif oluşturma, satış siparişi yönetimi ve faturalama süreçlerini yönetmek için kullanılır. Kullanıcılar müşterilere teklif gönderir, teklifleri siparişe çevirir ve bu siparişlerden fatura oluşturabilir.
+
+### Odoo’da Teklif (Quotation) Nasıl Oluşturulur?
+Satış modülünde “Teklifler” menüsünden yeni teklif oluşturulur. Müşteri seçilir, ürünler ve fiyatlar girilir, teslimat ve ödeme şartları belirlenir. Teklif müşteriye e-posta ile gönderilebilir veya PDF olarak yazdırılabilir.
+
+### Tekliften Satış Siparişine Geçiş Nasıl Olur?
+Müşteri teklifi onayladığında ilgili teklif kaydı Satış Siparişi’ne dönüştürülür. Bu işlem genellikle “Onayla / Confirm” butonuyla yapılır. Onaylanan sipariş, stok rezervasyonu ve faturalama için temel kaydı oluşturur.
+
+### Satış Siparişi ile Fatura İlişkisi Nasıldır?
+Satış siparişi satılacak ürünler ve miktarları içerir. Siparişe bağlı olarak proforma veya nihai fatura oluşturulur. Faturalar, siparişteki kalemlere dayanarak kısmi veya tam olacak şekilde düzenlenebilir.
+
+### Odoo’da Fiyat Listesi (Pricelist) Ne İşe Yarar?
+Fiyat listeleri, farklı müşteri gruplarına veya kampanyalara özel fiyatlar tanımlamayı sağlar. Döviz, ülke, tarih aralığı veya miktara bağlı fiyatlandırma gibi gelişmiş senaryoları destekler.
+
+### Odoo’da İndirimler Nasıl Yönetilir?
+Satış satırlarında satıra özel indirim yüzdesi tanımlanabilir. Ayrıca kuponlar, promosyonlar ve kampanya modülleri ile daha gelişmiş indirim kuralları uygulanabilir.
+
+### Odoo’da Teslimat ve Sevkiyat Nasıl Çalışır?
+Satış siparişleri onaylandığında sistem stok seviyelerini kontrol eder ve teslimat belgeleri oluşturur. Envanter modülüyle bağlantılı taşıma kuralları sayesinde sevkiyatlar depo operasyonları üzerinden yönetilir.
+
+### Satış Raporları Nasıl Kullanılır?
+Satış modülünde pivot, grafik ve liste görünümleriyle satış performansı analiz edilebilir. Ürün, müşteri, satış temsilcisi, tarih aralığı veya bölge bazlı filtrelerle detaylı raporlar alınabilir.
+
+---
+
+### CRM Modülü Nedir?
+CRM modülü, potansiyel müşterileri (lead) ve fırsatları (opportunity) yönetmek, satış pipeline’ını takip etmek ve satış ekibinin aktivitelerini planlamak için kullanılır. Satış sürecinin erken aşamalarına odaklanır.
+
+### Lead ve Opportunity Arasındaki Fark Nedir?
+Lead, henüz yeterince nitelendirilmemiş potansiyel müşteri bilgisidir. Opportunity ise satış ihtimali belirli bir seviyenin üzerine çıkmış, üzerinde aktif çalışılan fırsattır. Lead, uygun görüldüğünde opportunity’ye dönüştürülür.
+
+### Pipeline Aşamaları (Stages) Ne İşe Yarar?
+Pipeline aşamaları, fırsatların satış sürecindeki konumunu gösterir (Yeni, Teklif Gönderildi, Müzakere, Kazanıldı vb.). Her aşama için olasılık, renk ve otomatik aktiviteler tanımlanabilir.
+
+### CRM’de Aktiviteler Nasıl Kullanılır?
+Aktiviteler; arama, e-posta, toplantı gibi yapılacak işleri planlamayı sağlar. Her kayıt üzerinde aktivite zaman çizelgesi görünür; son tarih yaklaşan aktiviteler kullanıcıya bildirilir.
+
+### CRM’de Tahmin (Forecast) Özelliği Nasıl Çalışır?
+Fırsatların tahmini tutarı ve olasılık oranları üzerinden satış forecast raporları oluşturulur. Satış temsilcileri, dönem bazlı satış beklentilerini görebilir ve yöneticiler bütçe planlaması yapabilir.
+
+### Müşteri İlişkileri CRM’den Satış ve Faturaya Nasıl Bağlanır?
+Kazanan fırsatlardan doğrudan teklif veya satış siparişi oluşturulabilir. Böylece CRM, Satış ve Faturalama modülleri arasında uçtan uca bir akış sağlanır.
+
+---
+
+### Muhasebe Modülü Ne Yapar?
+Muhasebe modülü, satış ve satınalma faturalarını, banka hareketlerini, mali raporları, vergi hesaplamalarını ve bütçeleri yönetmek için kullanılır. Odoo’nun finansal kalbidir ve diğer modüllerden gelen finansal hareketleri konsolide eder.
+
+### Odoo’da Fatura Türleri Nelerdir?
+Müşteri faturaları, tedarikçi faturaları, iade faturaları (credit note) ve taslak/nihai faturalar gibi türler bulunur. Her fatura türü muhasebe kayıtlarında farklı hesaplara yansıyabilir.
+
+### Banka Mutabakatı Nasıl Yapılır?
+Banka ekstreleri ithal edilir veya manuel girilir. Muhasebe modülü, banka hareketlerini ilgili fatura ve muhasebe kayıtları ile eşleştirir. Eşleşmeyen hareketler için yeni muhasebe kayıtları oluşturulabilir.
+
+### Muhasebe Modülünde Vergi Yapılandırması Nasıl Çalışır?
+Vergi oranları, hesap kodları ve vergi grupları tanımlanır. Fatura satırlarında uygulanacak vergiler bu tanımlara göre otomatik hesaplanır. Yerel mevzuata göre KDV beyannamesi ve diğer raporlar üretilebilir.
+
+### Odoo’da Hesap Planı (Chart of Accounts) Nedir?
+Hesap planı, tüm muhasebe hesaplarının hiyerarşik listesidir. Gelir, gider, varlık ve borç hesapları bu listede organize edilir. Lokalizasyon paketleri, ülkeye özel hazır hesap planı şablonları sunar.
+
+### Odoo’da Otomatik Muhasebe Kayıtları Nasıl Oluşur?
+Satış ve satınalma faturaları, stok hareketleri ve bordro işlemleri son kullanıcı tarafından onaylandığında, sistem ilgili muhasebe kayıtlarını otomatik oluşturur. Kullanıcılar genelde fiş girişi yerine iş süreçlerini takip eder.
+
+### Odoo’da Mali Raporlar Nasıl Alınır?
+Gelir tablosu, bilanço, nakit akışı ve vergi raporları gibi standart muhasebe raporları hazırdır. Kullanıcılar tarih aralığı, şirket ve para birimi filtreleriyle raporları özelleştirebilir.
+
+### Çok Para Birimli (Multi-currency) Muhasebe Nasıl Yönetilir?
+Farklı para birimlerinde fatura kesmek ve ödeme almak mümkündür. Kur oranları düzenli güncellenir; muhasebe kayıtları genellikle şirket para birimi üzerinden tutulur, raporlar buna göre hesaplanır.
+
+---
+
+### Envanter (Stok) Modülü Ne İşe Yarar?
+Envanter modülü, stok seviyelerini, depo lokasyonlarını, stok giriş-çıkış hareketlerini ve transferleri yönetmek için kullanılır. Satış, satınalma ve üretim modülleriyle entegre çalışır.
+
+### Depo ve Lokasyon Kavramları Nedir?
+Bir depo (warehouse), birden çok dahili stok lokasyonundan oluşabilir. Lokasyonlar “raf, oda, kat” gibi fiziksel veya “yol üstü, kalite kontrol” gibi mantıksal alanları temsil eder.
+
+### Stok Hareketi (Stock Move) Nedir?
+Stok hareketi, ürünün bir lokasyondan başka bir lokasyona fiziksel veya mantıksal taşınmasını temsil eder. Satış teslimatı, satınalma girişi, iç transfer veya üretim tüketimi birer stok hareketi oluşturur.
+
+### Yeniden Sipariş Kuralları (Reordering Rules) Nasıl Çalışır?
+Belirli ürünler için minimum ve maksimum stok seviyeleri tanımlanır. Stok minimum seviyenin altına düştüğünde sistem otomatik satınalma siparişi veya üretim emri önerir.
+
+### Seri Numarası ve Lot Takibi Nasıl Kullanılır?
+Seri numarası, tekil ürünleri; lot numarası ise parti halinde gelen ürünleri takip etmeyi sağlar. Tedarik zinciri boyunca izlenebilirlik (traceability) için kullanılır.
+
+### Çift Kayıt Stok Mantığı Nedir?
+Odoo stok sistemi genellikle çift kayıt (double-entry) mantığı ile çalışır: her stok hareketinin bir kaynağı ve hedefi vardır. Bu sayede toplam stok dengesi korunur ve hareketler geriye dönük izlenebilir.
+
+### Envanter Değerleme Yöntemleri Nelerdir?
+FIFO, ortalama maliyet gibi yöntemler kullanılabilir. Değerleme yöntemi, stoktaki ürünlerin muhasebe değerinin nasıl hesaplanacağını belirler.
+
+### Farklı Depolar Arasında Transfer Nasıl Yapılır?
+Depolar arası transfer, iç transfer işlemleriyle yönetilir. Sistem, ürünün kaynak depodaki lokasyondan hedef deponun lokasyonuna taşınmasını stok hareketleri olarak kaydeder.
+
+---
+
+### Satınalma Modülü Ne Yapıyor?
+Satınalma modülü, tedarikçi teklifleri, satınalma siparişleri ve tedarikçi faturalarını yönetir. Stok ve muhasebe modülleriyle entegre çalışarak tedarik zinciri yönetimini destekler.
+
+### Satınalma Siparişi Nasıl Oluşturulur?
+Tedarikçi seçilir, satın alınacak ürünler ve miktarlar girilir, fiyat ve teslimat koşulları belirlenir. Onaylanan sipariş, stok girişi ve tedarikçi faturası için referans olur.
+
+### Teklif İsteği (RFQ) Ne Demektir?
+RFQ, tedarikçilerden fiyat teklifi toplamak için kullanılan dokümandır. Birden fazla tedarikçiye gönderilebilir; sonuçta en uygun teklif seçilerek satınalma siparişine dönüştürülebilir.
+
+### Satınalma ve Stok Arasındaki İlişki Nasıldır?
+Onaylanan satınalma siparişleri, ürün giriş hareketlerini oluşturur. Depoya gelen ürünler envanter modülünde stok artışı olarak kaydedilir; daha sonra tedarikçi faturası ile muhasebeye yansıtılır.
+
+### Satınalma Onay Akışı Nasıl Kurulur?
+Belirli tutar üzerindeki siparişler için yöneticiden onay gerektirecek kurallar tanımlanabilir. Bu sayede mali kontrol süreçleri desteklenir.
+
+---
+
+### Website Modülü Ne İşe Yarar?
+Website modülü, şirketin kurumsal web sitesini Odoo üzerinden oluşturup yönetmeye yarar. Sürükle-bırak editör ile sayfalar tasarlanabilir, menüler düzenlenebilir ve çok dilli içerik oluşturulabilir.
+
+### e-Ticaret Modülü Nasıl Çalışır?
+e-Ticaret modülü, ürünlerin çevrimiçi satışını sağlar. Müşteriler web sitesinden ürünleri sepetlerine ekler, ödeme yapar ve siparişleri Odoo’da satış ve stok süreçleriyle entegre şekilde yönetilir.
+
+### Ürünler Hem Odoo İçinde Hem Web’de Nasıl Paylaşılır?
+Stok veya Satış modülünde tanımlanan ürünler aynı zamanda Website/e-Ticaret için yayımlanabilir. Ürün kartında “Yayınla” seçeneğiyle web sitesinde görünür hale getirilir.
+
+### Şablonlar ve Temalar Ne İşe Yarar?
+Temalar, web sitesinin genel görünümünü belirler. Hazır temalar kullanılabilir veya geliştiriciler özel temalar oluşturabilir. Sayfa şablonları, belirli düzenleri hızlıca tekrar kullanmayı sağlar.
+
+### Canlı Sohbet (Live Chat) Nasıl Eklenir?
+Website modülü ile Live Chat uygulaması entegre edilerek ziyaretçilerle gerçek zamanlı sohbet yapılabilir. Sohbet oturumları, CRM ve satış süreçlerine bağlanabilir.
+
+### Formlar ve İletişim Sayfaları Nasıl Çalışır?
+Web form bileşeni ile iletişim formları, teklif istek formları veya kayıt formları oluşturulabilir. Gönderilen veriler CRM, satış veya özel modellere yönlendirilebilir.
+
+---
+
+### İnsan Kaynakları Modülü Neleri Kapsar?
+İK modülü; çalışan kartları, organizasyon yapısı, işe alım, izin yönetimi, giderler, performans değerlendirmeleri ve bordro gibi süreçleri kapsar. Ülke bazlı bordro özellikleri lokalizasyon paketlerine göre değişir.
+
+### İzin (Time Off) Yönetimi Nasıl Çalışır?
+Çalışanlar izin talebi oluşturur; yöneticiler bu talepleri onaylar veya reddeder. Onaylanan izinler takvimde görünür ve raporlara yansır. İzin hakları, sözleşme ve politika ayarlarına göre otomatik hesaplanabilir.
+
+### İşe Alım (Recruitment) Süreci Nasıl Yönetilir?
+İşe alım modülü ile iş ilanları oluşturulur, başvurular kaydedilir, adaylar pipeline aşamalarında takip edilir. Uygun adaylar için tek tıkla çalışan kartı ve sözleşme oluşturulabilir.
+
+### Gider Yönetimi (Expenses) Nasıl Kullanılır?
+Çalışanlar masraf fişlerini sisteme girer (yemek, konaklama vb.). Yöneticiler bu giderleri onaylar; onaylanan giderler muhasebeye ve gerektiğinde bordroya yansır.
+
+### Performans Değerlendirme Modülü Ne İşe Yarar?
+Değerlendirme formları, hedefler ve geri bildirim süreçleri yönetilir. Çalışanlar ve yöneticiler karşılıklı değerlendirme yapabilir; sonuçlar İK kararlarında kullanılabilir.
+
+### Filo (Fleet) Yönetimi Nedir?
+Filo modülü, şirket araçlarının teknik bilgilerini, kilometre takibini, bakım planlarını ve masraflarını kaydetmek için kullanılır. Araç maliyetleri muhasebeyle ilişkilendirilebilir.
+
+---
+
+### Proje Modülü Ne İşe Yarar?
+Proje modülü, projeleri, görevleri ve alt görevleri yönetmek için kullanılır. Görevler kanban, takvim veya liste görünümünde planlanabilir; zaman çizelgesi (timesheet) modülüyle entegre kullanılabilir.
+
+### Görev (Task) ve Proje İlişkisi Nasıldır?
+Her görev bir projeye bağlıdır. Proje, ilgili tüm görevlerin ve alt görevlerin konteyneri gibi çalışır. Proje seviyesinde genel ilerleme ve planlama yapılır.
+
+### Zaman Çizelgesi (Timesheet) Nasıl Kullanılır?
+Çalışanlar görevler üzerinde harcadıkları zamanı zaman çizelgesi kayıtlarıyla sisteme girer. Bu bilgiler, proje maliyeti, faturalandırılabilir saatler ve performans analizinde kullanılır.
+
+### Müşteri Projeleri Nasıl Faturalandırılır?
+Zaman ve malzeme bazlı projelerde, girilen timesheet’ler fatura kalemi olarak kullanılabilir. Böylece yapılan iş doğrudan müşteriye faturalandırılır.
+
+### Proje Raporlaması Nasıl Yapılır?
+Proje ve görev raporlarıyla geciken işler, fazla zaman harcanan görevler ve çalışan bazlı performans analiz edilebilir. Kanban ve Gantt görünümleri planlamayı destekler.
+
+---
+
+### Odoo’da Raporlama ve Dashboard’lar Nasıl Çalışır?
+Her modül kendi raporlama menülerine sahiptir. Pivot ve grafik görünümleriyle esnek raporlar oluşturulabilir; bu raporlar dashboard’lara eklenerek yönetici panelleri hazırlanabilir.
+
+### Favori Rapor Nasıl Kaydedilir?
+Sık kullanılan filtreler ve gruplamalar, “Favoriler” olarak kaydedilebilir. Böylece kullanıcı tek tıkla aynı rapor ekranını tekrar açabilir.
+
+### BI Özellikleri ve Elektronik Tablolar Nasıl Kullanılır?
+Odoo Spreadsheet ile raporlar elektronik tablo ortamında düzenlenebilir. Bazı modüller, canlı veriyi spreadsheet içine gömerek BI benzeri dinamik raporlar sunar.
+
+### Excel/PDF Dışa Aktarım Nasıl Yapılır?
+Liste görünümlerindeki veriler genellikle Excel dosyası olarak dışa aktarılabilir. Raporlar ise PDF olarak yazdırılabilir veya e-posta ile paylaşılabilir.
+
+---
+
+### Odoo’da Güvenlik Grupları Nasıl Tanımlanır?
+Güvenlik grupları, Ayarlar → Kullanıcılar & Gruplar ekranında tanımlanır. Her grup belirli modellere erişim ve menü görünürlüğü sağlar. Kullanıcılar bu gruplara atanarak yetkilendirilir.
+
+### Erişim Kuralları (Access Rights) Ne İşe Yarar?
+Erişim kuralları, bir modelde okuma, yazma, oluşturma ve silme yetkilerini belirler. ir.model.access.csv dosyaları ile tanımlanır. Bir modele erişebilmek için kullanıcı, ilgili model için en az bir olumlu erişim kaydına sahip olmalıdır.
+
+### Kayıt Kuralları (Record Rules) Ne İşe Yarar?
+Kayıt kuralları, model içindeki hangi kayıtların hangi kullanıcılar tarafından görülebileceğini belirler. Örneğin, kullanıcıların sadece kendi oluşturdukları kayıtları görmesini sağlayan kurallar tanımlanabilir.
+
+### Odoo’da Denetim Amaçlı Loglama Nasıl Yapılır?
+Bazı modüllerde yapılan değişiklikler “Chatter” üzerinden takip edilir; kim, ne zaman, hangi alanı değiştirdiği kaydedilir. Ek olarak, geliştirici modunda günlüğe (log) yazma ve hata izleme imkanları vardır.
+
+### Parola ve Oturum Güvenliği Nasıl Yönetilir?
+Kullanıcı parolaları güvenli şekilde saklanır. Oturum süresi, iki faktörlü kimlik doğrulama ve IP sınırlaması gibi ek güvenlik önlemleri bazı dağıtımlarda yapılandırılabilir.
+
+---
+
+### Odoo’da Geliştirme Ortamı Nasıl Kurulur?
+Geliştirme için Python, gerekli bağımlılıklar ve bir veritabanı sunucusu (genelde PostgreSQL) kurulur. Odoo kaynak kodu klonlanır; odoo.conf dosyasında addons_path ve diğer ayarlar yapılır. Geliştirme modunda sunucu çalıştırılarak custom modüller test edilir.
+
+### Odoo Modül Yapısı Nasıldır?
+Her modül; __manifest__.py, __init__.py, models, views, security, data ve gerekiyorsa static klasörlerinden oluşur. Manifest dosyası modülün meta bilgilerini ve yüklenecek data dosyalarını içerir.
+
+### Odoo ORM Nedir?
+ORM (Object-Relational Mapping), Python sınıflarıyla veritabanı tabloları arasında köprü kuran katmandır. Geliştirici, SQL yazmak yerine models.Model sınıfını ve field tanımlarını kullanarak veritabanı işlemlerini gerçekleştirir.
+
+### Model ve Alan (Field) Tanımı Nasıl Yapılır?
+Bir model, models.Model sınıfından türetilerek tanımlanır; alanlar fields.Char, fields.Many2one, fields.One2many gibi sınıflarla tanımlanır. Bu alanlar otomatik olarak veritabanı sütunlarına dönüştürülür.
+
+### View (Görünüm) Türleri Nelerdir?
+Form, list, kanban, graph, pivot, calendar, activity ve search gibi view türleri vardır. Her model için birden fazla view tanımı yapılabilir; kullanıcı arayüzünde bu view’ler arasında geçiş yapılabilir.
+
+### Action ve Menü İlişkisi Nasıldır?
+Action, hangi modelin hangi view ile açılacağını tanımlar. Menü kayıtları, ilgili action’a bağlanarak kullanıcıya navigasyon imkanı sağlar. Kullanıcı menüye tıkladığında aslında ilgili action tetiklenir.
+
+### Inherited View Nedir?
+Mevcut view’leri tamamen yeniden yazmadan, sadece ekleme veya düzenleme yapmak için kullanılır. Geliştirici, xpath ifadeleri ile hedef view’in belirli kısımlarını değiştirebilir.
+
+### API ile Entegrasyon Nasıl Yapılır?
+Odoo; XML-RPC ve JSON-RPC gibi API’ler üzerinden harici sistemlerle entegre edilebilir. Harici uygulamalar, kimlik doğrulama sonrası Odoo modelleri üzerinde kayıt oluşturabilir, güncelleyebilir veya veri sorgulayabilir.
+
